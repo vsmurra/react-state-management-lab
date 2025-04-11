@@ -88,6 +88,7 @@ const App = () => {
   ]);
 
   const handleAddFighter = (fighter) => {
+
     if (money < fighter.price) {
       alert(`You don't have enough money to recruit ${fighter.name}.`);
       return;
@@ -100,6 +101,7 @@ const App = () => {
 
   const handleRemoveFighter = (fighter) => {
     setTeam(team.filter(f => f.id !== fighter.id));
+    
     setZombieFighters([...zombieFighters, fighter]);
     setMoney(money + fighter.price);
   };
